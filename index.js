@@ -136,3 +136,22 @@ const writeFile = data => {
         }
     })
 };
+
+// initialize the app by calling addManager function
+
+addManager()
+    // call addEmployee function after addmanager runs
+    .then(addEmployee)
+    // call createHTML function passing in the teamArray as argument
+    // teamArray was populated by addManager and addEmployee functions
+    .then(teamArray => {
+        return createHTML(teamArray);
+    })
+    // call writeFile function passing in the created HTML from previous createHTML call
+    .then(html => {
+        return writeFile(html);
+    })
+    // catch any errors and console log them
+    .catch(err => {
+        console.log(err);
+    });
