@@ -58,7 +58,7 @@ const createIntern = (intern) => {
 // push array to page
 const createHTML = (data) => {
   // initialize empty array, will be filled with all employees from user submitted data
-  employeeArray = [];
+  let employeeArray = [];
   //loop through all employees in data from inquirer, create a roll variable for each employee
   for (let i = 0; i < data.length; i++) {
     const employee = data[i];
@@ -80,7 +80,7 @@ const createHTML = (data) => {
 
     // if role is intern, call createIntern function
     if (role === 'Intern') {
-      const internCard = generateIntern(employee);
+      const internCard = createIntern(employee);
       //push new card to employeeArray
       employeeArray.push(internCard);
     }
