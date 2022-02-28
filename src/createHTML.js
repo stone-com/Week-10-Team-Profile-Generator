@@ -96,6 +96,7 @@ const createHTML = (data) => {
 
 const createTeamPage = (cards) => {
   //return HTML page with links to stylesheet, bootstrap, font awesome, and jquery/bootstrap script tags.
+  //all generated cards will be included on the page
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -118,7 +119,7 @@ const createTeamPage = (cards) => {
             <div class="container">
                 <div class="row justify-content-center" id="team-cards">
                     <!--Team Cards-->
-                    ${cards}
+                   ${cards}
                 </div>
             </div>
         </main>
