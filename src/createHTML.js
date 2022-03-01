@@ -3,15 +3,15 @@ const createManager = (manager) => {
   return `
     <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header employee">
                 <h3>${manager.name}</h3>
                 <h4>Manager</h4><i class="material-icons">content_paste</i>
             </div>
-            <div class="card-body">
-                <p class="id">ID: ${manager.id}</p>
-                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="office">Office Number: ${manager.officeNumber}</p>
-            </div>
+            <ul class="card-body list-group-flush">
+                <li class="id list-group-item">ID: ${manager.id}</li>
+                <li class="email list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
+                <li class="office list-group-item">Office Number: ${manager.officeNumber}</li>
+            </ul>
         </div>
     </div>
     `;
@@ -22,15 +22,15 @@ const createEngineer = (engineer) => {
   return `
     <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header employee">
                 <h3>${engineer.name}</h3>
                 <h4>Engineer</h4><i class="material-icons">laptop_mac</i>
             </div>
-            <div class="card-body">
-                <p class="id">ID: ${engineer.id}</p>
-                <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
-            </div>
+            <ul class="card-body list-group-flush">
+                <li class="id list-group-item">ID: ${engineer.id}</li>
+                <li class="email list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+                <li class="github list-group-item">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></li>
+            </ul>
         </div>
     </div>
     `;
@@ -41,15 +41,15 @@ const createIntern = (intern) => {
   return `
     <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header employee">
                 <h3>${intern.name}</h3>
                 <h4>Intern</h4><i class="material-icons">assignment_ind</i>
             </div>
-            <div class="card-body">
-                <p class="id">ID: ${intern.id}</p>
-                <p class="email">Email:<a href="mailto:${intern.email}">${intern.email}</a></p>
-                <p class="school">School: ${intern.school}</p>
-            </div>
+            <ul class="card-body list-group-flush">
+                <li class="id list-group-item">ID: ${intern.id}</li>
+                <li class="email list-group-item">Email:<a href="mailto:${intern.email}">${intern.email}</a></li>
+                <li class="school list-group-item">School: ${intern.school}</li>
+            </ul>
         </div>
     </div>
     `;

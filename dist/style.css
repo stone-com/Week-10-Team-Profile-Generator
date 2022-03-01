@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e5e5f7;
+    background: linear-gradient(135deg, #444cf755 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #444cf7 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #444cf755 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #444cf7 25%, #e5e5f7 25%) 0px 0/ 20px 20px;
+}
+
+#navbar {
+    background-color: #e5e5f7;
+    background-image: linear-gradient(-45deg, #e5e5f7, #e5e5f7 50%, #a0f745 50%, #a0f745);
+    background-size: 10px 10px;
+    color: rgb(129, 6, 237);
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+
+.navbar-brand {
+  font-size: 3rem;
+}
+.card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset,rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;;
+    
+    border-radius: 15px;
+    margin: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    transform: rotate(8deg);
+}
+.card-header {
+    background-color: #e5e5f7;
+opacity: 0.8;
+background-image: radial-gradient(circle at center center, #a0f745, #e5e5f7), repeating-radial-gradient(circle at center center, #a0f745, #a0f745, 10px, transparent 20px, transparent 10px);
+background-blend-mode: multiply;
+    color: rgb(129, 6, 237);
+    text-align: center;
+    border-radius: 15px;
+}
+
+.card-body {
+    color: dimgray;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.container {
+  margin: 100px auto;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.card > .employee {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+li .list-group-item {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+ul {
+    text-align: center;
+}
+.row {
+    margin: 50px;
+}
+
