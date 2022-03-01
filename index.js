@@ -56,15 +56,15 @@ const addManager = () => {
           type: 'input',
           name: 'officeNumber',
           message: "Please enter the manager's office number",
-          validate: officeNumberInput => {
+          validate: (officeNumberInput) => {
             //   checking to see if input number is a number, return false if NaN
-            if  (isNaN(officeNumberInput)) {
-                console.log ('Please enter an office number!')
-                return false; 
+            if (isNaN(officeNumberInput)) {
+              console.log('Please enter an office number!');
+              return false;
             } else {
-                return true;
+              return true;
             }
-        }
+          },
         },
       ])
       .then((promptResults) => {
@@ -97,11 +97,30 @@ const addEmployee = () => {
         type: 'input',
         name: 'id',
         message: "Please enter the employee's ID.",
+        validate: (idInput) => {
+          if (isNaN(idInput)) {
+            // checking to see if ID is  number, if not, tell user in console
+            console.log("Please enter the manager's ID!");
+            return false;
+          } else {
+            return true;
+          }
+        },
       },
       {
         type: 'input',
         name: 'email',
         message: "Please enter the employee's email.",
+        validate: (email) => {
+          //   checking for valid characters in email
+          valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+          if (valid) {
+            return true;
+          } else {
+            console.log('Please enter an email!');
+            return false;
+          }
+        },
       },
       {
         type: 'input',
