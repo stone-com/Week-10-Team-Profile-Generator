@@ -27,16 +27,44 @@ const addManager = () => {
           type: 'input',
           name: 'id',
           message: "Please enter the manager's ID.",
+          validate: (idInput) => {
+            if (isNaN(idInput)) {
+              // checking to see if ID is  number, if not, tell user in console
+              console.log("Please enter the manager's ID!");
+              return false;
+            } else {
+              return true;
+            }
+          },
         },
         {
           type: 'input',
           name: 'email',
           message: "Please enter the manager's email.",
+          validate: (email) => {
+            //   checking for valid characters in email
+            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+            if (valid) {
+              return true;
+            } else {
+              console.log('Please enter an email!');
+              return false;
+            }
+          },
         },
         {
           type: 'input',
           name: 'officeNumber',
           message: "Please enter the manager's office number",
+          validate: officeNumberInput => {
+            //   checking to see if input number is a number, return false if NaN
+            if  (isNaN(officeNumberInput)) {
+                console.log ('Please enter an office number!')
+                return false; 
+            } else {
+                return true;
+            }
+        }
         },
       ])
       .then((promptResults) => {
@@ -122,36 +150,38 @@ const addEmployee = () => {
     });
 };
 
-//  function to use fs to create html page, 
+//  function to use fs to create html page,
 
-const writeFile = data => {
-    fs.writeFile('./dist/index.html', data, err => {
-        if (err) {
-            // if there is an error, console log it and return
-            console.log(err);
-            return;
-        } else {
-            // if theres not an error, console log that it has successfully created the file
-            console.log('Your team profile has been created at index.html in the dist folder.')
-        }
-    })
+const writeFile = (data) => {
+  fs.writeFile('./dist/index.html', data, (err) => {
+    if (err) {
+      // if there is an error, console log it and return
+      console.log(err);
+      return;
+    } else {
+      // if theres not an error, console log that it has successfully created the file
+      console.log(
+        'Your team profile has been created at index.html in the dist folder.'
+      );
+    }
+  });
 };
 
 // initialize the app by calling addManager function
 
 addManager()
-    // call addEmployee function after addmanager runs
-    .then(addEmployee)
-    // call createHTML function passing in the teamArray as argument
-    // teamArray was populated by addManager and addEmployee functions
-    .then(teamArray => {
-        return createHTML(teamArray);
-    })
-    // call writeFile function passing in the created HTML from previous createHTML call
-    .then(html => {
-        return writeFile(html);
-    })
-    // catch any errors and console log them
-    .catch(err => {
-        console.log(err);
-    });
+  // call addEmployee function after addmanager runs
+  .then(addEmployee)
+  // call createHTML function passing in the teamArray as argument
+  // teamArray was populated by addManager and addEmployee functions
+  .then((teamArray) => {
+    return createHTML(teamArray);
+  })
+  // call writeFile function passing in the created HTML from previous createHTML call
+  .then((html) => {
+    return writeFile(html);
+  })
+  // catch any errors and console log them
+  .catch((err) => {
+    console.log(err);
+  });
